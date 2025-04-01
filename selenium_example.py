@@ -1,10 +1,11 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service
 import time
 
-# Specify the path to ChromeDriver
-chrome_driver_path = "/usr/local/bin/chromedriver"
-driver = webdriver.Chrome(executable_path=chrome_driver_path)
+# Create a Service object for Chrome
+service = Service("/usr/local/bin/chromedriver")
+driver = webdriver.Chrome(service=service)
 
 try:
     driver.get("http://localhost:3000/loginscreen")
@@ -30,3 +31,4 @@ except Exception as e:
 finally:
     print("--= Ending Tests =--")
     driver.quit()
+
