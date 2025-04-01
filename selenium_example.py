@@ -1,11 +1,15 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
 import time
 
-# Create a Service object for Chrome
-service = Service("/usr/local/bin/chromedriver")
-driver = webdriver.Chrome(service=service)
+options = Options()
+options.add_argument("--headless")
+options.add_argument("--no-sandbox")
+options.add_argument("--disable-dev-shm-usage")
+
+# Don't specify chromedriver path!
+driver = webdriver.Chrome(options=options)
 
 try:
     driver.get("http://localhost:3000/loginscreen")
@@ -13,8 +17,8 @@ try:
 
     print("--= Beginning Tests =--")
     login_button = driver.find_element(By.CSS_SELECTOR, "input[type='submit'][value='Login']")
-    copy = driver.find_element(By.CSS_SELECTOR,"p[class='lead']").text
-    
+    copy = driver.find_element(By.CSS_SELECTOR, "p[class='lead']").text
+
     if copy == "A billion dollars and it's yours!":
         print("[FAILED] - Default Copy is still in place.")
     else:
@@ -31,4 +35,3 @@ except Exception as e:
 finally:
     print("--= Ending Tests =--")
     driver.quit()
-
