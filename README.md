@@ -16,9 +16,9 @@ specific areas where I could improve the documentation.
 
 ## Getting Started
 
-### Installing Requirements
+### Installing Dependencies
 
-The requirements are listed in `requirements.txt`. With `pip`, they can be
+The required dependencies are listed in `requirements.txt`. With `pip`, they can be
 easily installed in one command:
 
 `pip3 install -r requirements.txt`
