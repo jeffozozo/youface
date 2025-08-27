@@ -30,11 +30,9 @@ with the following command:
 
 `python3 youface.py`
 
-By default, the server can be accessed at `http://127.0.0.1:5000`
+By default, the server can be accessed at `http://127.0.0.1:5005`
 
 Press `CTRL+C` to stop the server
-
-***Note: Some systems have port 5000 in use. If that is the case, change 5000 above to something like 5005. 
 
 ## Development
 
