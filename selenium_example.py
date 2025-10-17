@@ -4,7 +4,7 @@ from selenium.webdriver.chrome.options import Options
 import time
 
 options = Options()
-options.add_argument("--headless")
+#options.add_argument("--headless")
 options.add_argument("--no-sandbox")
 options.add_argument("--disable-dev-shm-usage")
 
@@ -12,7 +12,7 @@ options.add_argument("--disable-dev-shm-usage")
 driver = webdriver.Chrome(options=options)
 
 try:
-    driver.get("http://localhost:3000/loginscreen")
+    driver.get("http://localhost:5005/loginscreen")
     time.sleep(2)
 
     print("--= Beginning Tests =--")
