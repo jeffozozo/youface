@@ -60,10 +60,29 @@ Press `CTRL+C` to stop the server
 │   ├── friend.html
 │   ├── login.html
 │   └── nav.html
-├── tests
-│   └── test_login.py
 └── youface.py
 ```
+
+### File Contents
+posts.py - contains code to handle user posts
+users.py - code to handle users and user management
+db.json - the database. The default state has one user - 'jeff' with password 'password'
+copy.py - contains text for the main screen
+friends.py - code to help manage friends
+login.py - code to manage the login screen
+posts.py - code to manage posts
+README.md - this file
+requirements.txt - the dependecies for this project. Used in automated testing with github actions and docker file creation
+bootstrap.min.css - the stylesheet framework
+youface.css - the youface stylesheet
+base.html - the base html template
+feed.html - the template for the feed box
+friend.html - the template for the friends box
+login.html - the html template for the login screen
+nav.html - the template for the menu
+youface.py - starts the server
+
+You should read through these files and become very familiar with their structure and usage.
 
 ### External Libraries
 
@@ -106,16 +125,5 @@ Posts
 | text | str | The text of the post. |
 | time | float | The timestamp for when the post was created. |
 
-### Running the Tests
 
-Run all the tests in the `tests` directory:
 
-```
-python3 -m unittest discover -vs tests
-```
-
-Run a specific test file (e.g., `tests/test_login.py`:
-
-```
-python3 -m unittest tests.test_login
-```
